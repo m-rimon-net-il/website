@@ -34,9 +34,10 @@
 <script src="https://apis.google.com/js/client.js?onload=GmailInit"></script>
 <script>
 function GmailInit(){
+	alert("1");
 	gapi.client.setApiKey("AIzaSyCRoIk181oOEwMCvrmCen1wsxYliDaPSbk");
-	gapi.client.load('plus', 'v1').then(function() {
-		alert('loaded.');
+	gapi.client.load("urlshortener", "v1").then(function() {
+		alert("loaded.");
 	});
 }
 </script>
