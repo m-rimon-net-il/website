@@ -41,23 +41,16 @@ function GmailApiInit(){
 </script>
 
 <script type="text/javascript">
-
       var clientId = '181419960939';
-
       var apiKey = 'AIzaSyCRoIk181oOEwMCvrmCen1wsxYliDaPSbk';
-
       var scopes = 'https://www.googleapis.com/auth/plus.me';
-
       function handleClientLoad() {
-        // Step 2: Reference the API key
         gapi.client.setApiKey(apiKey);
         window.setTimeout(checkAuth,1);
       }
-
       function checkAuth() {
         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
       }
-
       function handleAuthResult(authResult) {
         var authorizeButton = document.getElementById('authorize-button');
         if (authResult && !authResult.error) {
@@ -68,13 +61,11 @@ function GmailApiInit(){
           authorizeButton.onclick = handleAuthClick;
         }
       }
-
       function handleAuthClick(event) {
         // Step 3: get authorization to use private data
         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
         return false;
       }
-
       // Load the API and make an API call.  Display the results on the screen.
       function makeApiCall() {
         // Step 4: Load the Google+ API
@@ -98,8 +89,7 @@ function GmailApiInit(){
         });
       }
     </script>
-
-<script src="https://apis.google.com/js/client.js?onload=GmailApiInit"></script>
+	<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 
 <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
