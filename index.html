@@ -35,9 +35,13 @@
 function GmailApiInit(){
 	gapi.client.setApiKey("AIzaSyCRoIk181oOEwMCvrmCen1wsxYliDaPSbk");
 	gapi.client.load("urlshortener", "v1").then(function() {
-		alert("load");
+	    var request = gapi.client.urlshortener.url.get({
+	      'shortUrl': 'http://goo.gl/fbsS'
+	    });
+	    request.execute(function(response) {
+	      alert(response.longUrl);
+	    });
 	});
-}
 </script>
 <script src="https://apis.google.com/js/client.js?onload=GmailApiInit"></script>
 
