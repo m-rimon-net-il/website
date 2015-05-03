@@ -76,15 +76,9 @@ function GmailApiInit(){
           });
           // Step 6: Execute the API request
           request.then(function(resp) {
-            var heading = document.createElement('h4');
-            var image = document.createElement('img');
-            image.src = resp.result.image.url;
-            heading.appendChild(image);
-            heading.appendChild(document.createTextNode(resp.result.displayName));
-
-            document.getElementById('content').appendChild(heading);
+            alert("load");
           }, function(reason) {
-            console.log('Error: ' + reason.result.error.message);
+            alert('Error: ' + reason.result.error.message);
           });
         });
       }
