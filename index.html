@@ -52,7 +52,6 @@ function GmailApiInit(){
         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
       }
       function handleAuthResult(authResult) {
-      	alert("12");
         var authorizeButton = document.getElementById('authorize-button');
         if (authResult && !authResult.error) {
           authorizeButton.style.visibility = 'hidden';
@@ -85,7 +84,7 @@ function GmailApiInit(){
       }
     </script>
 	<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-
+<button id="authorize-button">aaaaaaaaaaaaaaaaaaaa</button>
 <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
   </div>
