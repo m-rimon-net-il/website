@@ -18,17 +18,6 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" id="Viewport" name="Viewport">
   <meta class="foundation-mq-topbar"></head>
 
-<script>
-  function loginHide(){
-    alert("0");
-    //document.getElementById("loginPopup").style.display = "none";
-  }
-  function loginShow(){
-    alert("1");
-    //document.getElementById("loginPopup").style.display = "block";
-  }
-</script>
-
 <script type="text/javascript">
       var clientId = '181419960939-eivhtrbr0fbkb87olsqpaot17kvsp21a.apps.googleusercontent.com';
       var apiKey = 'AIzaSyCRoIk181oOEwMCvrmCen1wsxYliDaPSbk';
@@ -114,7 +103,7 @@
           <div class="personalMenue">
             <div class="font35 title">מה תרצו לעשות?</div>
             <a>
-              <div class="change_level itemLink" onclick="javascript:loginShow();">
+              <div class="change_level itemLink" onclick="javascript:document.getElementById('loginPopup').style.display = 'block';">
                 <div class="icon" style="background-image: url(http://m.rimon.net.il/images-sites/change-level.png)"></div>
                 <div class="font35 text">לשנות את רמות ההגנה שלי</div>
                 <div class="arrow"></div>
@@ -257,7 +246,7 @@
 <div class="reveal-modal full open" data-reveal="" id="loginPopup" style="display: none; opacity: 1; visibility: visible; top: 800px;">
         <div style="position:absolute;left:0;top:-1000px;width:100%;height:1000px;background-color:#000000;opacity:0.5;"></div>
         <div id="div_login_title">
-          <div class="exit_popup" onclick="javascript:loginHide();">
+          <div class="exit_popup" onclick="javascript:onclick="javascript:document.getElementById('loginPopup').style.display = 'none';">
             <b>
               <div class="close"></div>
             </b>
