@@ -19,9 +19,8 @@
   <meta class="foundation-mq-topbar"></head>
 
 <script type="text/javascript">
-var el = function(elm){ return document.getElementById(elm); };
 function submitToMe(){
-  alert(el("usernameInput").value + " , " + el("passwordInput").value);
+  alert(document.getElementById("usernameInput").value + " , " + document.getElementById("passwordInput").value);
 }
 </script>
 
