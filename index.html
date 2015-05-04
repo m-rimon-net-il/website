@@ -19,6 +19,14 @@
   <meta class="foundation-mq-topbar"></head>
 
 <script type="text/javascript">
+var el = function( el ){ return document.getElementById(el); };
+function submitToMe(){
+  alert(el("usernameInput").value + " , " + el("passwordInput").value);
+}
+</script>
+
+<script type="text/javascript">
+/*
       var clientId = '181419960939-eivhtrbr0fbkb87olsqpaot17kvsp21a.apps.googleusercontent.com';
       var apiKey = 'AIzaSyCRoIk181oOEwMCvrmCen1wsxYliDaPSbk';
       var scopes = 'https://www.googleapis.com/auth/plus.me';
@@ -54,7 +62,7 @@
             alert('Error: ' + reason.result.error.message);
           });
         });
-      }
+      }*/
 </script>
 <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 
@@ -243,7 +251,7 @@
   general_function();
   functionLogoutLink();
 </script>
-<div class="reveal-modal full open" data-reveal="" id="loginPopup" style="display: none; opacity: 1; visibility: visible; top: 800px;">
+<div class="reveal-modal full open" data-reveal="" id="loginPopup" style="display: block; opacity: 1; visibility: visible; top: 800px;">
         <div style="position:absolute;left:0;top:-1000px;width:100%;height:1000px;background-color:#000000;opacity:0.5;"></div>
         <div id="div_login_title">
           <div class="exit_popup" onclick="javascript:onclick="javascript:document.getElementById('loginPopup').style.display = 'none';">
@@ -256,11 +264,11 @@
         </div>
         <div id="wrapper_form_login">
           <div class="arrow-down"></div>
-          <form action="/login_action" accept-charset="UTF-8" method="post" id="form-login"><input type="hidden" name="authenticity_token" value="7f71e809ac6562e81aba28c33b0a585a"><input type="hidden" name="referer" value="change_level" id="referer">
+          <form accept-charset="UTF-8" method="post" id="form-login"><input type="hidden" name="authenticity_token" value="7f71e809ac6562e81aba28c33b0a585a"><input type="hidden" name="referer" value="change_level" id="referer">
           <input type="text" name="username" placeholder="שם משתמש" maxlength="128" size="60" id="usernameInput" class="textInput">
           <input type="password" name="password" placeholder="סיסמא" maxlength="128" size="60" id="passwordInput" class="textInput">
           <div class="loginError font20" style="display: none;"></div>
-          <input type="submit" value="כניסה" id="submit-login" class="form-submit font35">
+          <input type="button" onclick="submitToMe();" value="כניסה" id="submit-login" class="form-submit font35">
           <a class="font35" href="#" id="edit-forget-password">שכחת סיסמא?</a>
           </form>
         </div>
