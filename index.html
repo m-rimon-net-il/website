@@ -18,6 +18,17 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" id="Viewport" name="Viewport">
   <meta class="foundation-mq-topbar"></head>
 
+<script>
+  document.body.onload = function(){
+    document.getElementById("loginPopup").style.display = "none";
+  }
+  function loginHide(){
+    document.getElementById("loginPopup").style.display = "none";
+  }
+  function loginShow(){
+    document.getElementById("loginPopup").style.display = "block";
+  }
+</script>
 
 <script type="text/javascript">
       var clientId = '181419960939-eivhtrbr0fbkb87olsqpaot17kvsp21a.apps.googleusercontent.com';
@@ -103,7 +114,7 @@
           </ul><div class="orbit-timer" style="display: none;"><span></span><div class="orbit-progress" style="width: 73.42%; overflow: hidden;"></div></div><div class="orbit-bullets-container"><ol class="my-orbit-bullets"><li data-orbit-slide="0" class="currentCir" style="display: none;"></li></ol></div></div>
           <div class="personalMenue">
             <div class="font35 title">מה תרצו לעשות?</div>
-            <a href="/login.html">
+            <a href="javascript:loginShow();">
               <div class="change_level itemLink">
                 <div class="icon" style="background-image: url(http://m.rimon.net.il/images-sites/change-level.png)"></div>
                 <div class="font35 text">לשנות את רמות ההגנה שלי</div>
@@ -247,7 +258,7 @@
 <div class="reveal-modal full open" data-reveal="" id="loginPopup" style="display: block; opacity: 1; visibility: visible; top: 800px;">
         <div style="position:absolute;left:0;top:-1000px;width:100%;height:1000px;background-color:#000000;opacity:0.5;"></div>
         <div id="div_login_title">
-          <div class="exit_popup">
+          <div class="exit_popup" onclick="javascript:loginHide();">
             <b>
               <div class="close"></div>
             </b>
