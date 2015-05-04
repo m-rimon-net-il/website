@@ -52,7 +52,6 @@ function GmailApiInit(){
         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
       }
       function handleAuthResult(authResult) {
-      	alert("1");
         if (authResult && !authResult.error) {
           makeApiCall();
         } else {
@@ -62,6 +61,9 @@ function GmailApiInit(){
       // Load the API and make an API call.  Display the results on the screen.
       function makeApiCall() {
         // Step 4: Load the Google+ API
+        
+        alert("1");
+        
         gapi.client.load('plus', 'v1').then(function() {
           // Step 5: Assemble the API request
           var request = gapi.client.plus.people.get({
